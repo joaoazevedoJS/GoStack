@@ -1,0 +1,17 @@
+.c-textGrey {
+  color: #40474D;
+  font-size: 16px;
+  line-height: 26px;
+  margin-top: 32px;
+}
+
+.c-textGrey + .c-textGrey {
+  margin-top: 16px;
+}
+
+@media (max-width: 480px) {
+  .c-textGrey  {
+    font-size: 14px;
+  line-height: 24px;
+  }
+}
