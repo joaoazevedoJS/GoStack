@@ -41,6 +41,8 @@
     "@typescript-eslint/ban-types": "off",
     "no-use-before-define": "off",
     "prettier/prettier": "error",
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
