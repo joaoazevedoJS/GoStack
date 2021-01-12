@@ -51,6 +51,7 @@ const Input: FC<InputProps> = ({ icon: Icon, name, ...rest }) => {
         ref={inputRef}
         {...rest}
       />
+      {error}
     </Container>
   );
 };
