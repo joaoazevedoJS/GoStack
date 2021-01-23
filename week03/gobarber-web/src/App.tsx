@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+import Routes from './routes';
 
 import GlobalStyle from './styles/global';
 
@@ -10,7 +9,7 @@ import AppProvider from './hooks';
 const App: FC = () => (
   <>
     <AppProvider>
-      <SignIn />
+      <Routes />
     </AppProvider>
 
     <GlobalStyle />
