@@ -5,6 +5,7 @@ import {
   Platform,
   View,
   ScrollView,
+  TextInput,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
@@ -27,6 +28,7 @@ import {
 
 const SignIn: FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const passwordInputRef = useRef<TextInput>(null);
   const navigation = useNavigation();
 
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -51,25 +53,34 @@ const SignIn: FC = () => {
             <Title>Faça seu logon</Title>
           </View>
 
-          <Form ref={formRef} onSubmit={handleSignIn}>
-            <Input name="email" icon="mail" placeholder="E-mail" />
+          <Form style={{ width: '100%' }} ref={formRef} onSubmit={handleSignIn}>
+            <Input
+              name="email"
+              icon="mail"
+              placeholder="E-mail"
+              autoCorrect={false}
+              autoCapitalize="none"
+              keyboardType="email-address"
+              returnKeyType="next"
+              onSubmitEditing={() => passwordInputRef.current?.focus()}
+            />
 
-            <Input name="password" icon="lock" placeholder="Senha" />
+            <Input
+              name="password"
+              icon="lock"
+              placeholder="Senha"
+              ref={passwordInputRef}
+              secureTextEntry
+              returnKeyType="send"
+              onSubmitEditing={() => formRef.current?.submitForm()}
+            />
 
-            <Button
-              onPress={() => {
-                /* */
-              }}
-            >
+            <Button onPress={() => formRef.current?.submitForm()}>
               Entrar
             </Button>
           </Form>
 
-          <ForgotPassword
-            onPress={() => {
-              formRef.current?.submitForm();
-            }}
-          >
+          <ForgotPassword>
             <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
           </ForgotPassword>
         </Container>
