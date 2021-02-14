@@ -9,9 +9,10 @@ import {
 } from 'typeorm';
 
 import User from '@modules/users/infra/typeorm/entities/User';
+import IAppointments from '@modules/appointments/entities/IAppointments';
 
 @Entity('appointments')
-class Appointment {
+class Appointment implements IAppointments {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

@@ -5,7 +5,7 @@ import authConfig from '@config/auth';
 
 import AppError from '@shared/errors/AppError';
 
-interface TokenPayload {
+interface ITokenPayload {
   iat: number; // data de criação
   exp: number; // data de expiração
   sub: string; // dados do payload
@@ -25,7 +25,7 @@ function ensureAuthenticated(
   const [, token] = authHeader.split(' ');
 
   try {
-    const decoded = verify(token, authConfig.jwt.secret) as TokenPayload;
+    const decoded = verify(token, authConfig.jwt.secret) as ITokenPayload;
 
     const { sub } = decoded;
 

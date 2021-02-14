@@ -39,6 +39,7 @@
     "class-methods-use-this": "off",
     "prettier/prettier": "error",
     "camelcase": "off",
+    "no-useless-constructor": "off",
     "@typescript-eslint/naming-convention": [
       "error",
       {
