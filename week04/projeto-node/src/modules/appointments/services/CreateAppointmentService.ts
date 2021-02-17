@@ -3,7 +3,7 @@ import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
 
-import Appointment from '../entities/IAppointments';
+import IAppointment from '../entities/IAppointment';
 
 import IAppointmentsRepository from '../repositories/IAppointmentRepository';
 
@@ -19,7 +19,7 @@ class CreateAppointmentService {
     private appointmentsRepository: IAppointmentsRepository,
   ) {}
 
-  public async execute({ date, provider_id }: IRequest): Promise<Appointment> {
+  public async execute({ date, provider_id }: IRequest): Promise<IAppointment> {
     const appointmentDate = startOfHour(date);
 
     const findAppointmentInSameDate = await this.appointmentsRepository.findByDate(
