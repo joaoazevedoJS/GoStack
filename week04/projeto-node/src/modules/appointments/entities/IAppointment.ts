@@ -1,17 +1,13 @@
-import IUser from '@modules/users/entities/IUsers';
+interface IAppointment {
+  id: string;
 
-class IAppointment {
-  public id: string;
+  provider_id: string;
 
-  public provider_id: string;
+  date: Date;
 
-  public provider: IUser;
+  created_at: Date;
 
-  public date: Date;
-
-  public created_at: Date;
-
-  public updated_at: Date;
+  updated_at: Date;
 }
 
 export default IAppointment;
