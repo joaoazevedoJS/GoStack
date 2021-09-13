@@ -1,4 +1,3 @@
-import { hash } from 'bcryptjs';
 import { v4 as uuid } from 'uuid';
 
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';

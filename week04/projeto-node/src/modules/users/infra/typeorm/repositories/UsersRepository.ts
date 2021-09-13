@@ -1,5 +1,4 @@
 import { getRepository, Repository } from 'typeorm';
-import { hash } from 'bcryptjs';
 
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import IUser from '@modules/users/entities/IUsers';
